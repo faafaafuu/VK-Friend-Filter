@@ -85,7 +85,7 @@ let myModule = {
             rightFriend: rightFriendList
         });
     },
-    // обработчики и DND
+    // обработчики DND
     setListeners: function () {
         let firstList = document.getElementById('myFriends'),
             secondList = document.getElementById('myFriendsList'),
