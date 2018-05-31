@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://vk.com/js/api/openapi.js?122"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+    <script src="http://vk.com/js/api/openapi.js"></script>
+</head>
+
+<body>
+<div class="modal">
+<div id="modal-container">
+<style>
+    body {
+        font-family: Arial, PTSans;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(0,0,0,0.7);
+    }
+
+    #container {
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        background-color:  #fff;
+        width: 620px;
+        height: 490px;
+    }
+    #choiceFriends {
+        background-color:  #ff8663;
+        border-radius: 10px 10px 0 0;
+        width: 620px;
+        height: 45px;
+        padding: 0;
+        margin: 0;
+    }
+    #tagP {
+        color: #fff;
+        font-size: 16px;
+        margin-left: 15px;
+        margin-top: 14px;
+        position: absolute;
+    }
+    .close {
+        color: #fff;
+        float: right;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-left: 590px;
+        margin-top: 12px;
+        position: absolute;
+    }
+
+    .tagDiv {
+        margin: 0;
+        height: 20px;
+        width: 310px;
+        font-weight: bold;
+        background: #fff;
+     }
+    .tagPList {
+        margin: 10px 15px 1px 20px;
+        color:  #4f4f4f;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: left;
+    }
+    .headerInput {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        z-index: 10000;
+        position: absolute;
+        height: 40px;
+        width: 310px;
+        background-color:  #f0f0f0;
+     }
+    .input {
+        width: 285px;
+        height: 25px;
+        margin: 9px;
+        border-radius: 50px;
+        border: 1px solid #fff;
+        padding-left: 10px;
+        outline: none;
+        margin-left: 12px;
+    }
+    .filterFriend {
+        display: inline-block;
+        margin-top: 75px;
+        height: 330px;
+        width: 305px;
+        background: rgba(255, 255, 255);
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    #container button {
+        border-radius: 12px;
+        background-color: #ff8663;
+        width: 87px;
+        height: 30px;
+        margin: 12px 520px;
+        color: #F5F8F8;
+        outline: none;
+    }
+    .footer {
+        background-color:  #f0f0f0;
+        width: 620px;
+        height: 55px;
+        border-radius: 0 0 10px 10px;
+    }
+    ::-webkit-scrollbar-button {
+        background-image:url('');
+        background-repeat:no-repeat;
+        width:5px;
+        height:0px;
+    }
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        height: 80px;
+        background-color:#c4c4c4;
+    }
+    ::-webkit-resizer{
+        background-image:url('');
+        background-repeat:no-repeat;
+        width:4px;
+        height:0px;
+    }
+    ::-webkit-scrollbar{
+        width: 4px;
+    }
+
+</style>
+
+<div id="container">
+    <div id="choiceFriends">
+        <p id="tagP">Выберите друзей</p>
+        <span class="close">&times;</span>
+    </div>
+    <div class="headerInput">
+        <input type="search" id="input-search-leftFriend" class="input" placeholder="Начните вводьть имя друга" value="">
+        <div class="tagDiv"><p class="tagPList">Ваши друзья</p></div>
+    </div>
+    <div id="myFriends" class="filterFriend">
+        <!-- Друзя добавляються сюда!!! -->
+    </div>
+
+    <div class="headerInput">
+
+        <input type="search" id="input-search-rightFriend" class="input" placeholder="Начните вводьть имя друга" value="">
+        <div class="tagDiv"><p class="tagPList">Друзья в списке</p></div>
+    </div>
+    <div id="myFriendsList" class="filterFriend">
+        <!-- Друзя  переместить сюда!!! -->
+    </div>
+    <div class="footer">
+    <button id="button">Сохранить</button>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
