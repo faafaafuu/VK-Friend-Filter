@@ -58,7 +58,7 @@ let myModule = {
 
         let friendsList = document.querySelector('#myFriends'),
             secondList = document.querySelector('#myFriendsList');
-        //  последовательное выполнение кода
+        
         login()
             .then(() => callAPI('friends.get', {v: 5.63, fields: ['photo_100']}))
             .then(function (result) {
@@ -85,7 +85,7 @@ let myModule = {
             rightFriend: rightFriendList
         });
     },
-    // обработчики и DND
+    // обработчики DND
     setListeners: function () {
         let firstList = document.getElementById('myFriends'),
             secondList = document.getElementById('myFriendsList'),
